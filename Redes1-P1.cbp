@@ -7,10 +7,11 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Redes1-P1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/psiesta" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option host_application="bin/Debug/psiesta" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -32,6 +33,9 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pserver.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
