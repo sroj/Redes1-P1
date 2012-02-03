@@ -6,7 +6,7 @@ int main(int argc,char* argv[]){
   char *hostname;
   int premoto, plocal, timeout;
 
-  if(argc == 9){
+  if(ar gc == 9){
 
   if (!strcmp(argv[1], "-h")) {
     strcpy(hostname, argv[2]);
