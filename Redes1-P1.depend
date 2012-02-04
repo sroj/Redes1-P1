@@ -1,6 +1,19 @@
 # depslib dependency file v1.0
-1328231724 source:/home/simonr/Documents/Redes1-P1/main.c
+1328380493 source:/home/simonr/Documents/Redes1-P1/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"pserver.h"
+
+1328381409 source:/home/simonr/Documents/Redes1-P1/pserver.c
+	<arpa/inet.h>
+	<netdb.h>
+	<netinet/in.h>
+	<stdio.h>
+	<string.h>
+	<sys/socket.h>
+	<unistd.h>
+	<stdlib.h>
+
+1328384529 /home/simonr/Documents/Redes1-P1/pserver.h
 

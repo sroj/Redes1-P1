@@ -7,10 +7,12 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
+				<Option platforms="Unix;" />
 				<Option output="bin/Debug/psiesta" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="-h www.google.com -p 8080 -l 3000 -t 15" />
 				<Option host_application="bin/Debug/psiesta" />
 				<Compiler>
 					<Add option="-g" />
@@ -38,6 +40,7 @@
 		<Unit filename="pserver.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="pserver.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
