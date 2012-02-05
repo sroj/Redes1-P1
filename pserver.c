@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "pserver.h"
 
 //Tamaño de los buffers de lectura y escritura en sockets
 #define BUFFER_SIZE 8192
@@ -17,6 +18,13 @@ void exit_error(char error_msg[])
 {
     perror(error_msg);
     exit(EXIT_FAILURE);
+}
+
+//Elimina todos los headers del request http del cliente
+void eliminarHeaders(char request[])
+{
+    char* token = strtok(request, "\r\n");
+    strcat(request, "\r\n");
 }
 
 int processClientRequest(int p_remoto, int timeout, const char hostname[],
@@ -55,8 +63,13 @@ int processClientRequest(int p_remoto, int timeout, const char hostname[],
         exit_error("pserver.c: processClientRequest: error al conectar al host");
 
     memset(in_buffer, 0, BUFFER_SIZE);
+
     if (read(client_socket_fd, in_buffer, BUFFER_SIZE - 1) < 0)
         exit_error("pserver.c: processClientRequest: error al leer del socket");
+
+    printf("Request antes de eliminar headers:\n%s\n", out_buffer);
+
+    eliminarHeaders(in_buffer);
 
     memcpy(out_buffer, in_buffer, BUFFER_SIZE);
 
